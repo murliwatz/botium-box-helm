@@ -1,11 +1,9 @@
 
 update:
-	helm dependency update botium-box-premium-all-advanced
 	helm dependency update botium-box-prisma
 	helm dependency update botium-box-ce
 	helm dependency update botium-box-ce-storage
 	helm dependency update botium-box-standalone
-	helm dependency update botium-box-mini
 	helm dependency update botium-box-advanced
 	helm dependency update botium-efs-provisioner
 	helm dependency update botium-coach-worker
@@ -16,13 +14,11 @@ update:
 	helm dependency update botium-speech-processing
 
 package:
-	rm -f botium-box-ce-*.tgz botium-box-prisma-*.tgz botium-box-redis-*.tgz botium-box-zap-*.tgz botium-box-mini-*.tgz botium-box-standalone-*.tgz botium-coach-worker-*.tgz botium-efs-provisioner-*.tgz botium-wildcard-ingress-*.tgz ingress-nginx-*.tgz botium-speech-processing-*.tgz
-	helm package botium-box-premium-all-advanced
+	rm -f botium-box-ce-*.tgz botium-box-prisma-*.tgz botium-box-redis-*.tgz botium-box-zap-*.tgz botium-box-standalone-*.tgz botium-coach-worker-*.tgz botium-efs-provisioner-*.tgz botium-wildcard-ingress-*.tgz ingress-nginx-*.tgz botium-speech-processing-*.tgz
 	helm package botium-box-prisma
 	helm package botium-box-ce
 	helm package botium-box-ce-storage
 	helm package botium-box-standalone
-	helm package botium-box-mini
 	helm package botium-box-advanced
 	helm package botium-efs-provisioner
 	helm package botium-coach-worker

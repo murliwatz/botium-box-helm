@@ -1,7 +1,0 @@
-apiVersion: v2
-name: botium-box-mini
-description: Botium Box Multi Tenancy
-
-type: application
-version: 0.0.141
-appVersion: 2.8.6
