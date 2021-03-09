@@ -57,14 +57,14 @@ questions:
     default: ""
     type: string
     required: true
-    show_subquestion_if: false
+    show_subquestion_if: "false"
   - variable: MYSQL_USER
     default: ""
     type: string
     required: true
-    show_subquestion_if: false
+    show_subquestion_if: "false"
   - variable: MYSQL_PASSWORD
     default: ""
     type: string
     required: true
-    show_subquestion_if: false
+    show_subquestion_if: "false"
