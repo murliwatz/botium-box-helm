@@ -98,6 +98,11 @@ spec:
                 configMapKeyRef:
                   name: botium-box-configmap
                   key: PRISMA_CONFIG_FILE
+            - name: BOTIUMBOX_AUDIT_FOLDER
+              valueFrom:
+                configMapKeyRef:
+                  name: botium-box-configmap
+                  key: BOTIUMBOX_AUDIT_FOLDER
             {{- else }}
             - name: PRISMA_ENDPOINT
               valueFrom:
@@ -110,11 +115,6 @@ spec:
                   name: botium-box-secrets
                   key: PRISMA_SECRET
             {{- end }}
-            - name: BOTIUMBOX_AUDIT_FOLDER
-              valueFrom:
-                configMapKeyRef:
-                  name: botium-box-configmap
-                  key: BOTIUMBOX_AUDIT_FOLDER
             - name: LICENSE_KEY
               valueFrom:
                 configMapKeyRef:
