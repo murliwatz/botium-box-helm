@@ -3,7 +3,22 @@ entries:
   botium-box-advanced:
   - apiVersion: v1
     appVersion: 2.8.6
-    created: "2021-03-09T18:40:38.322075508+01:00"
+    created: "2021-03-09T18:43:25.288660385+01:00"
+    dependencies:
+    - condition: INSTALL_REDIS
+      name: botium-box-redis
+      repository: file://../botium-box-redis
+      version: 0.0.1
+    description: Botium Box Advanced
+    digest: 355713bff83378993cfde51bcd94779c79a9eccd3c9abcd55d984db28d0f18a6
+    name: botium-box-advanced
+    type: application
+    urls:
+    - https://github.com/murliwatz/botium-box-helm/raw/master/botium-box-advanced-0.0.35.tgz
+    version: 0.0.35
+  - apiVersion: v1
+    appVersion: 2.8.6
+    created: "2021-03-09T18:43:25.288034252+01:00"
     dependencies:
     - condition: INSTALL_REDIS
       name: botium-box-redis
@@ -18,7 +33,7 @@ entries:
     version: 0.0.34
   - apiVersion: v1
     appVersion: 2.8.6
-    created: "2021-03-09T18:40:38.321426365+01:00"
+    created: "2021-03-09T18:43:25.287372339+01:00"
     dependencies:
     - condition: INSTALL_REDIS
       name: botium-box-redis
@@ -33,7 +48,7 @@ entries:
     version: 0.0.33
   - apiVersion: v1
     appVersion: 2.8.6
-    created: "2021-03-09T18:40:38.320650871+01:00"
+    created: "2021-03-09T18:43:25.286657676+01:00"
     dependencies:
     - condition: INSTALL_REDIS
       name: botium-box-redis
@@ -48,7 +63,7 @@ entries:
     version: 0.0.32
   - apiVersion: v1
     appVersion: 2.8.6
-    created: "2021-03-09T18:40:38.320032488+01:00"
+    created: "2021-03-09T18:43:25.286018343+01:00"
     dependencies:
     - condition: INSTALL_REDIS
       name: botium-box-redis
@@ -63,7 +78,7 @@ entries:
     version: 0.0.31
   - apiVersion: v1
     appVersion: 2.8.6
-    created: "2021-03-09T18:40:38.319365085+01:00"
+    created: "2021-03-09T18:43:25.28534148+01:00"
     dependencies:
     - condition: INSTALL_REDIS
       name: botium-box-redis
@@ -78,7 +93,7 @@ entries:
     version: 0.0.30
   - apiVersion: v1
     appVersion: 2.8.6
-    created: "2021-03-09T18:40:38.316497534+01:00"
+    created: "2021-03-09T18:43:25.283100838+01:00"
     dependencies:
     - condition: INSTALL_REDIS
       name: botium-box-redis
@@ -93,7 +108,7 @@ entries:
     version: 0.0.29
   - apiVersion: v1
     appVersion: 2.8.6
-    created: "2021-03-09T18:40:38.315855181+01:00"
+    created: "2021-03-09T18:43:25.282437415+01:00"
     dependencies:
     - condition: INSTALL_REDIS
       name: botium-box-redis
@@ -108,7 +123,7 @@ entries:
     version: 0.0.28
   - apiVersion: v1
     appVersion: 2.8.6
-    created: "2021-03-09T18:40:38.315172148+01:00"
+    created: "2021-03-09T18:43:25.281756242+01:00"
     dependencies:
     - condition: INSTALL_REDIS
       name: botium-box-redis
@@ -123,7 +138,7 @@ entries:
     version: 0.0.27
   - apiVersion: v1
     appVersion: 2.8.6
-    created: "2021-03-09T18:40:38.314453183+01:00"
+    created: "2021-03-09T18:43:25.281137539+01:00"
     dependencies:
     - condition: INSTALL_REDIS
       name: botium-box-redis
@@ -138,7 +153,7 @@ entries:
     version: 0.0.26
   - apiVersion: v1
     appVersion: 2.8.6
-    created: "2021-03-09T18:40:38.31381399+01:00"
+    created: "2021-03-09T18:43:25.280521827+01:00"
     dependencies:
     - condition: INSTALL_REDIS
       name: botium-box-redis
@@ -153,7 +168,7 @@ entries:
     version: 0.0.25
   - apiVersion: v1
     appVersion: 2.8.6
-    created: "2021-03-09T18:40:38.313219717+01:00"
+    created: "2021-03-09T18:43:25.279900364+01:00"
     dependencies:
     - condition: INSTALL_REDIS
       name: botium-box-redis
@@ -168,7 +183,7 @@ entries:
     version: 0.0.24
   - apiVersion: v1
     appVersion: 2.8.6
-    created: "2021-03-09T18:40:38.312462334+01:00"
+    created: "2021-03-09T18:43:25.279276861+01:00"
     dependencies:
     - condition: INSTALL_REDIS
       name: botium-box-redis
@@ -183,7 +198,7 @@ entries:
     version: 0.0.23
   - apiVersion: v1
     appVersion: 2.8.6
-    created: "2021-03-09T18:40:38.311819661+01:00"
+    created: "2021-03-09T18:43:25.278650018+01:00"
     dependencies:
     - condition: INSTALL_REDIS
       name: botium-box-redis
@@ -198,7 +213,7 @@ entries:
     version: 0.0.22
   - apiVersion: v1
     appVersion: 2.8.6
-    created: "2021-03-09T18:40:38.311202098+01:00"
+    created: "2021-03-09T18:43:25.278019015+01:00"
     dependencies:
     - condition: INSTALL_REDIS
       name: botium-box-redis
@@ -213,7 +228,7 @@ entries:
     version: 0.0.21
   - apiVersion: v1
     appVersion: 2.8.6
-    created: "2021-03-09T18:40:38.310520825+01:00"
+    created: "2021-03-09T18:43:25.277358612+01:00"
     dependencies:
     - condition: INSTALL_REDIS
       name: botium-box-redis
@@ -228,7 +243,7 @@ entries:
     version: 0.0.20
   - apiVersion: v1
     appVersion: 2.8.6
-    created: "2021-03-09T18:40:38.308157674+01:00"
+    created: "2021-03-09T18:43:25.274935842+01:00"
     dependencies:
     - condition: INSTALL_REDIS
       name: botium-box-redis
@@ -243,7 +258,7 @@ entries:
     version: 0.0.19
   - apiVersion: v1
     appVersion: 2.8.6
-    created: "2021-03-09T18:40:38.307492552+01:00"
+    created: "2021-03-09T18:43:25.274264879+01:00"
     dependencies:
     - condition: INSTALL_REDIS
       name: botium-box-redis
@@ -258,7 +273,7 @@ entries:
     version: 0.0.18
   - apiVersion: v1
     appVersion: 2.8.6
-    created: "2021-03-09T18:40:38.306798619+01:00"
+    created: "2021-03-09T18:43:25.273601386+01:00"
     dependencies:
     - condition: INSTALL_REDIS
       name: botium-box-redis
@@ -273,7 +288,7 @@ entries:
     version: 0.0.17
   - apiVersion: v1
     appVersion: 2.8.6
-    created: "2021-03-09T18:40:38.306107946+01:00"
+    created: "2021-03-09T18:43:25.272951283+01:00"
     dependencies:
     - condition: INSTALL_REDIS
       name: botium-box-redis
@@ -288,7 +303,7 @@ entries:
     version: 0.0.15
   - apiVersion: v1
     appVersion: 2.8.6
-    created: "2021-03-09T18:40:38.305350712+01:00"
+    created: "2021-03-09T18:43:25.272346471+01:00"
     dependencies:
     - condition: INSTALL_REDIS
       name: botium-box-redis
@@ -303,7 +318,7 @@ entries:
     version: 0.0.14
   - apiVersion: v1
     appVersion: 2.8.6
-    created: "2021-03-09T18:40:38.304559529+01:00"
+    created: "2021-03-09T18:43:25.271736138+01:00"
     dependencies:
     - condition: INSTALL_REDIS
       name: botium-box-redis
@@ -318,7 +333,7 @@ entries:
     version: 0.0.13
   - apiVersion: v1
     appVersion: 2.8.6
-    created: "2021-03-09T18:40:38.303969986+01:00"
+    created: "2021-03-09T18:43:25.271161155+01:00"
     dependencies:
     - condition: INSTALL_REDIS
       name: botium-box-redis
@@ -333,7 +348,7 @@ entries:
     version: 0.0.12
   - apiVersion: v1
     appVersion: 2.8.6
-    created: "2021-03-09T18:40:38.303369773+01:00"
+    created: "2021-03-09T18:43:25.270530792+01:00"
     dependencies:
     - condition: INSTALL_REDIS
       name: botium-box-redis
@@ -352,7 +367,7 @@ entries:
     version: 0.0.11
   - apiVersion: v2
     appVersion: 2.8.6
-    created: "2021-03-09T18:40:38.302125371+01:00"
+    created: "2021-03-09T18:43:25.269667798+01:00"
     dependencies:
     - condition: INSTALL_REDIS
       name: botium-box-redis
@@ -371,7 +386,7 @@ entries:
     version: 0.0.10
   - apiVersion: v1
     appVersion: 2.8.6
-    created: "2021-03-09T18:40:38.327997656+01:00"
+    created: "2021-03-09T18:43:25.296185849+01:00"
     description: Botium Box Advanced
     digest: 04c9ca9c08032957c8a811f3e2e5139c7ac66844a01a0c94edbc83d1c955e0b6
     name: botium-box-advanced
@@ -381,7 +396,7 @@ entries:
     version: 0.0.9
   - apiVersion: v2
     appVersion: 2.8.6
-    created: "2021-03-09T18:40:38.32695505+01:00"
+    created: "2021-03-09T18:43:25.295379206+01:00"
     dependencies:
     - condition: INSTALL_REDIS
       name: botium-box-redis
@@ -400,7 +415,7 @@ entries:
     version: 0.0.8
   - apiVersion: v2
     appVersion: 2.8.6
-    created: "2021-03-09T18:40:38.325694734+01:00"
+    created: "2021-03-09T18:43:25.294496842+01:00"
     dependencies:
     - name: botium-box-prisma
       repository: file://../botium-box-prisma
@@ -422,7 +437,7 @@ entries:
     version: 0.0.7
   - apiVersion: v2
     appVersion: 2.8.6
-    created: "2021-03-09T18:40:38.32473472+01:00"
+    created: "2021-03-09T18:43:25.293606417+01:00"
     dependencies:
     - name: botium-box-prisma
       repository: file://../botium-box-prisma
@@ -444,7 +459,7 @@ entries:
     version: 0.0.6
   - apiVersion: v2
     appVersion: 2.8.6
-    created: "2021-03-09T18:40:38.323857816+01:00"
+    created: "2021-03-09T18:43:25.290459053+01:00"
     dependencies:
     - name: botium-box-prisma
       repository: file://../botium-box-prisma
@@ -466,7 +481,7 @@ entries:
     version: 0.0.5
   - apiVersion: v2
     appVersion: 2.8.6
-    created: "2021-03-09T18:40:38.322964412+01:00"
+    created: "2021-03-09T18:43:25.289550069+01:00"
     dependencies:
     - name: botium-box-prisma
       repository: file://../botium-box-prisma
@@ -488,7 +503,7 @@ entries:
     version: 0.0.4
   - apiVersion: v2
     appVersion: 2.8.6
-    created: "2021-03-09T18:40:38.318403541+01:00"
+    created: "2021-03-09T18:43:25.284621747+01:00"
     dependencies:
     - name: botium-box-prisma
       repository: file://../botium-box-prisma
@@ -510,7 +525,7 @@ entries:
     version: 0.0.3
   - apiVersion: v2
     appVersion: 2.8.6
-    created: "2021-03-09T18:40:38.309117149+01:00"
+    created: "2021-03-09T18:43:25.276347889+01:00"
     dependencies:
     - condition: INSTALL_REDIS
       name: botium-box-redis
@@ -530,9 +545,9 @@ entries:
   botium-box-ce:
   - apiVersion: v2
     appVersion: 2.7.0
-    created: "2021-03-09T18:40:38.328208337+01:00"
+    created: "2021-03-09T18:43:25.29638219+01:00"
     description: Botium Box
-    digest: 87d24c0c9371674757b4bf94be8ade905700d94be460f9d82946b0878c6e72ff
+    digest: ae0f4c429de052be27c31d50e831cae444ee9d83e6ae8757186e1f79363f56cb
     name: botium-box-ce
     type: application
     urls:
@@ -541,9 +556,9 @@ entries:
   botium-box-ce-storage:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-03-09T18:40:38.328340378+01:00"
+    created: "2021-03-09T18:43:25.296489021+01:00"
     description: Botium Box
-    digest: 793af5d89f0a45d7a5d313b5e32f406565b9217a60828cd58f236f817aa82465
+    digest: 72c8fc2be5b835034c6dd071aaa37724fb0019b301bb265cc49d0d4b5d6e16d3
     name: botium-box-ce-storage
     type: application
     urls:
@@ -552,7 +567,7 @@ entries:
   botium-box-mini:
   - apiVersion: v2
     appVersion: 2.8.6
-    created: "2021-03-09T18:40:38.32880303+01:00"
+    created: "2021-03-09T18:43:25.296938363+01:00"
     description: Botium Box Multi Tenancy
     digest: 8bdcc575574189d0ae145fc7e5d4ec21055758d938926e8a9bbbb85c330c6081
     name: botium-box-mini
@@ -563,7 +578,7 @@ entries:
   botium-box-premium-all-advanced:
   - apiVersion: v1
     appVersion: 2.8.4
-    created: "2021-03-09T18:40:38.329372702+01:00"
+    created: "2021-03-09T18:43:25.297301984+01:00"
     description: Botium Box
     digest: a1af4f57264a6b0ea571f5dd1b7aa08d9a151253bd8f7fc2464e87a73ade9c34
     name: botium-box-premium-all-advanced
@@ -574,9 +589,9 @@ entries:
   botium-box-prisma:
   - apiVersion: v1
     appVersion: 1.0.0
-    created: "2021-03-09T18:40:38.329586363+01:00"
+    created: "2021-03-09T18:43:25.297508155+01:00"
     description: Botium Box Prisma
-    digest: 5baabfafc2a94d78b5652e04f2bca2bce09d392a0b5fe9edc93c7728bc447a05
+    digest: 14c6112f4b6e60cb712d9fc328469da322e5c1ccdea81a108e9d9c9a22c185bc
     name: botium-box-prisma
     type: application
     urls:
@@ -585,9 +600,9 @@ entries:
   botium-box-redis:
   - apiVersion: v1
     appVersion: 0.0.1
-    created: "2021-03-09T18:40:38.329710674+01:00"
+    created: "2021-03-09T18:43:25.297625296+01:00"
     description: Redis for Botium Box
-    digest: 16d7a0fd0603bd6348e3274c73737e34471712c84a02c909ab250ea1e270df13
+    digest: f61a87752574a1d8f2b71f4aaff71c0979cf980b768848eefbe46e4f1d7852f4
     name: botium-box-redis
     type: application
     urls:
@@ -596,9 +611,9 @@ entries:
   botium-box-standalone:
   - apiVersion: v1
     appVersion: 2.8.4
-    created: "2021-03-09T18:40:38.330157776+01:00"
+    created: "2021-03-09T18:43:25.298053838+01:00"
     description: Botium Box Standalone
-    digest: 715eefd9e8148e60f32a77a1db23442b5a0d83fa31b08aefd0436029c1235aa0
+    digest: dfb6c10f017dc9a50eb6ec56681a9c6e66c71f90ced7c96d7c06a0c8cfa23c49
     name: botium-box-standalone
     type: application
     urls:
@@ -607,9 +622,9 @@ entries:
   botium-box-zap:
   - apiVersion: v1
     appVersion: 0.0.1
-    created: "2021-03-09T18:40:38.330281356+01:00"
+    created: "2021-03-09T18:43:25.298172028+01:00"
     description: ZAP shared
-    digest: ec57ea379f53289252e300b151d0f24547c2f3e499865bca538fb40ae9da6192
+    digest: da3152f7b8c2a31a1b6f580e37291a9b8a0541529f155eb01de0108f34fcf87a
     name: botium-box-zap
     type: application
     urls:
@@ -618,9 +633,9 @@ entries:
   botium-coach-worker:
   - apiVersion: v1
     appVersion: 0.0.5
-    created: "2021-03-09T18:40:38.330447667+01:00"
+    created: "2021-03-09T18:43:25.29855764+01:00"
     description: Botium Coach Worker
-    digest: 33155291f0ed754f58f04cc3df2a305089f7cda5dcdf18160c5920969cbbd34d
+    digest: 6f0136eec71836dc88310add8cdc0ea9b727606c029408a8ac1d4459dfd4611a
     name: botium-coach-worker
     type: application
     urls:
@@ -629,9 +644,9 @@ entries:
   botium-efs-provisioner:
   - apiVersion: v1
     appVersion: latest
-    created: "2021-03-09T18:40:38.330591368+01:00"
+    created: "2021-03-09T18:43:25.298752291+01:00"
     description: Botium EFS Provisioner
-    digest: 084dcc43014d6eb13e5b33d5b842c13ac9af4eee160616e9ddf2bfee0d3743b5
+    digest: 2a01d92677c2fe503436d764e841dae031c0f2a0d7359f05066cdee1204dcd11
     name: botium-efs-provisioner
     type: application
     urls:
@@ -640,9 +655,9 @@ entries:
   botium-speech-processing:
   - apiVersion: v1
     appVersion: latest
-    created: "2021-03-09T18:40:38.330826889+01:00"
+    created: "2021-03-09T18:43:25.299291962+01:00"
     description: Botium Speech Processing
-    digest: 8c8d4fe539f515304e495ce39b58bb1f6328ff318f6fda4b183beb96c67ac2a9
+    digest: f738e6406a638db0893d963e3c6a4bb9ffd5427bf11ba5c54c10be012c3c1234
     name: botium-speech-processing
     type: application
     urls:
@@ -651,9 +666,9 @@ entries:
   botium-wildcard-ingress:
   - apiVersion: v1
     appVersion: 0.0.1
-    created: "2021-03-09T18:40:38.33100333+01:00"
+    created: "2021-03-09T18:43:25.299455513+01:00"
     description: Botium WildCard Ingress
-    digest: b4fd7ff5807026c419967354ae95c4d5661f069acfe4713556ba4ecef797c4ce
+    digest: 5d8c1c1c28e1dd4e5beb0eb8442897f29a0c4f1e5fa0d6be51000856e3f396ad
     name: botium-wildcard-ingress
     type: application
     urls:
@@ -662,12 +677,12 @@ entries:
   ingress-nginx:
   - apiVersion: v1
     appVersion: latest
-    created: "2021-03-09T18:40:38.331180721+01:00"
+    created: "2021-03-09T18:43:25.299655064+01:00"
     description: Botium Ingress NGinx Reverse Proxy
-    digest: 7579823d26e454e3881c1699a6773ece3fcd77bb348eaefdf5e2f1e4fb6a6a1f
+    digest: 6e97a1a0d363b4d18736ce2fb6ad5e984d03815db4764c49d9d02c76bfd3bb71
     name: ingress-nginx
     type: application
     urls:
     - https://github.com/murliwatz/botium-box-helm/raw/master/ingress-nginx-0.0.22.tgz
     version: 0.0.22
-generated: "2021-03-09T18:40:38.300493393+01:00"
+generated: "2021-03-09T18:43:25.26817315+01:00"

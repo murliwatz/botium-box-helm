@@ -428,7 +428,7 @@ spec:
           servicePort: 4000
 ---
 apiVersion: cert-manager.io/v1alpha2
-kind: ClusterIssuer
+kind: Issuer
 metadata:
   name: {{ .Values.FQDN }}-letsencrypt-prod
 spec:
@@ -446,7 +446,7 @@ spec:
           region: eu-west-1
           accessKeyID: "{{ .Values.AWS_ACCESS_KEY_ID }}"
           secretAccessKeySecretRef:
-            name: botium-box-route53-secrets
+            name: botium-box-secrets
             key: AWS_SECRET_ACCESS_KEY
 ---
 apiVersion: cert-manager.io/v1alpha2
