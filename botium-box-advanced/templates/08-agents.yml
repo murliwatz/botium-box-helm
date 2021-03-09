@@ -93,12 +93,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: box-agentp
+  name: box-agent
 spec:
   clusterIP: None
   selector:
-    name: box-agentp
+    name: box-agent
     app: botium-box
+{{- if gt .Values.AGENTP_COUNT 0 }}
 ---
 apiVersion: apps/v1
 kind: StatefulSet
@@ -201,3 +202,4 @@ spec:
   selector:
     name: box-agentp
     app: botium-box
+{{- end }}
