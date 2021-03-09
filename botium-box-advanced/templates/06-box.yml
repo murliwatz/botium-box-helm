@@ -1,5 +1,9 @@
 apiVersion: extensions/v1beta1
+{{- if .Values.ENABLE_MULTI_TENANCY }}
 kind: DaemonSet
+{{- else }}
+kind: Deployment
+{{- end }}
 metadata:
   name: box-server
   labels:
@@ -8,10 +12,12 @@ metadata:
     tier: frontend
 spec:
   replicas: 1
+  {{- if .Values.ENABLE_MULTI_TENANCY }}
   updateStrategy:
     type: RollingUpdate
     rollingUpdate:
       maxUnavailable: 1
+  {{- end }}
   template:
     metadata:
       labels:
@@ -19,7 +25,7 @@ spec:
         app: botium-box
         tier: frontend
     spec:
-      {{- if .Values.ENABLE_AGENT_NODESELECTION}}
+      {{- if .Values.ENABLE_AGENT_NODESELECTION }}
       nodeSelector:
         box-agent-type: common
       {{- end }}
