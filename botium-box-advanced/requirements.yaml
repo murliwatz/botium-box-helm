@@ -3,7 +3,3 @@ dependencies:
     version: 0.0.1
     repository: 'file://../botium-box-redis'
     condition: INSTALL_REDIS
-  - name: botium-box-zap
-    version: 0.0.1
-    repository: 'file://../botium-box-zap'
-    condition: INSTALL_ZAP

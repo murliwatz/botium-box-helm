@@ -1,0 +1,6 @@
+dependencies:
+- name: botium-box-redis
+  repository: file://../botium-box-redis
+  version: 0.0.1
+digest: sha256:cd997ffeef61f9c7de2dd6faef360d886cf79fe25e77ca4959fda10589b9795a
+generated: "2021-03-09T10:27:28.597735325+01:00"
