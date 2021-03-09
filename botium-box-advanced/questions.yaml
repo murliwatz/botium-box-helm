@@ -57,6 +57,7 @@ questions:
   type: boolean
   required: true
   show_subquestion_if: "false"
+  subquestions:
   - variable: BOTIUMBOX_QUEUE_PREFIX
     default: "qprod"
     description: "Redis Prefix"
