@@ -53,7 +53,11 @@ spec:
           image: {{ .Values.CONTAINER_REGISTRY }}/botium/botium-box-server:{{ .Values.BOTIUM_BOX_VERSION }}
           {{- end }}
           command: ["/bin/sh"]
+          {{- if .Values.ENABLE_MULTI_TENANCY }}
           args: ["-c", "node -r dotenv-flow/config dist/botium-box-server.js"]
+          {{- else }}
+          args: ["-c", "npm run deploy && node -r dotenv-flow/config dist/botium-box-server.js"]
+          {{- end }}
           ports:
             - name: box-4000
               containerPort: 4000
