@@ -19,6 +19,10 @@ spec:
         app: botium-box
         tier: frontend
     spec:
+      {{- if .Values.ENABLE_AGENT_NODESELECTION}}
+      nodeSelector:
+        box-agent-type: common
+      {{- end }}
       initContainers:
         - name: box-server-chmod-er-storage
           image: busybox:latest
@@ -258,6 +262,10 @@ spec:
         name: box-server-shell
         app: botium-box-shell
     spec:
+      {{- if .Values.ENABLE_AGENT_NODESELECTION}}
+      nodeSelector:
+        box-agent-type: common
+      {{- end }}
       containers:
         - name: box-server
           {{- if eq .Values.CONTAINER_REGISTRY "" }}
