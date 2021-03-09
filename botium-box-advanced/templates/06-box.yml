@@ -510,6 +510,6 @@ spec:
     name: {{ .Values.FQDN }}-letsencrypt-prod
   commonName: {{ .Values.FQDN }}.botiumbox
   dnsNames:
-  - {{{ .Values.FQDN }}
+  - {{ .Values.FQDN }}
 {{- end }}
 {{- end }}
