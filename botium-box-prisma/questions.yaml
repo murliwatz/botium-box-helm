@@ -44,3 +44,23 @@ questions:
   description: "Install Mysql"
   type: boolean
   required: true
+- variable: PRISMA_MANAGEMENT_API_SECRET
+  default: ""
+  type: string
+  required: true
+- variable: PRISMA_MANAGEMENT_SCHEMA
+  default: "prisma"
+  type: string
+  required: true
+- variable: MYSQL_HOST
+  default: ""
+  type: string
+  required: true
+- variable: MYSQL_USER
+  default: ""
+  type: string
+  required: true
+- variable: MYSQL_PASSWORD
+  default: ""
+  type: string
+  required: true
