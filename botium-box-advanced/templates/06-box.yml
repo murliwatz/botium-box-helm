@@ -1,4 +1,4 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 {{- if .Values.ENABLE_MULTI_TENANCY }}
 kind: DaemonSet
 {{- else }}
@@ -268,7 +268,7 @@ spec:
             claimName: botium-box-prisma-config-storage
 {{- if .Values.ENABLE_MULTI_TENANCY }}
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: box-server-shell
@@ -378,7 +378,7 @@ spec:
     {{- end }}
 {{- if .Values.MAINTENANCE }}
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: maintenance
@@ -405,7 +405,7 @@ spec:
 {{- if .Values.INSTALL_INGRESS }}
 {{- if .Values.ENABLE_MULTI_TENANCY }}
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Ingress
 metadata:
   name: box-ingress
@@ -468,7 +468,7 @@ spec:
           - '*.{{ .Values.FQDN }}'
 {{- else}}
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Ingress
 metadata:
   name: box-ingress
