@@ -99,7 +99,7 @@ spec:
   selector:
     name: box-agent
     app: botium-box
-{{- if gt .Values.AGENTP_COUNT 0 }}
+{{- if gt (int .Values.AGENTP_COUNT) 0 }}
 ---
 apiVersion: apps/v1
 kind: StatefulSet
