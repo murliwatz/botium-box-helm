@@ -142,6 +142,9 @@ questions:
   description: "Install 'Ingress'"
   type: boolean
   required: true
+  show_subquestion_if: "true"
+  subquestions:
+
 - variable: ENABLE_RESOURCE_LIMIT
   default: false
   description: "Enable Limits for agents"
