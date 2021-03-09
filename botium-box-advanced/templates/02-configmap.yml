@@ -6,6 +6,7 @@ metadata:
     name: config
     app: botium-box
 data:
+  PRISMA_ENDPOINT: "{{ .Values.PRISMA_ENDPOINT }}"
   LICENSE_KEY: "{{ .Values.LICENSE_KEY }}"
   COACH_WORKER_ENDPOINT: "{{ .Values.COACH_WORKER_ENDPOINT }}"
   SPEECH_PROCESSING_ENDPOINT: "{{ .Values.SPEECH_PROCESSING_ENDPOINT }}"
