@@ -39,11 +39,6 @@ questions:
   description: "Install Ingress with Letsencrypt"
   type: boolean
   required: true
-- variable: INSTALL_MYSQL
-  default: true
-  description: "Install Mysql"
-  type: boolean
-  required: true
 - variable: PRISMA_MANAGEMENT_API_SECRET
   default: ""
   type: string
@@ -52,15 +47,24 @@ questions:
   default: "prisma"
   type: string
   required: true
-- variable: MYSQL_HOST
-  default: ""
-  type: string
+- variable: INSTALL_MYSQL
+  default: true
+  description: "Install Mysql"
+  type: boolean
   required: true
-- variable: MYSQL_USER
-  default: ""
-  type: string
-  required: true
-- variable: MYSQL_PASSWORD
-  default: ""
-  type: string
-  required: true
+  subquestions:
+  - variable: MYSQL_HOST
+    default: ""
+    type: string
+    required: true
+    show_subquestion_if: false
+  - variable: MYSQL_USER
+    default: ""
+    type: string
+    required: true
+    show_subquestion_if: false
+  - variable: MYSQL_PASSWORD
+    default: ""
+    type: string
+    required: true
+    show_subquestion_if: false
