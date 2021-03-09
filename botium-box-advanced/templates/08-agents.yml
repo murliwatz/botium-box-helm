@@ -33,7 +33,7 @@ spec:
           - /app/agent/storage
           volumeMounts:
           - mountPath: "/app/agent/storage"
-            name: botium-box-mini-storage
+            name: botium-box-storage
       containers:
         - name: box-agent
           {{- if eq .Values.CONTAINER_REGISTRY "" }}
@@ -55,7 +55,7 @@ spec:
           {{- end }}
           volumeMounts:
           - mountPath: "/app/agent/storage/"
-            name: botium-box-mini-storage
+            name: botium-box-storage
           env:
             - name: BOTIUMBOX_AGENT_NAME
               valueFrom:
@@ -86,9 +86,9 @@ spec:
                   name: botium-box-configmap
                   key: BOTIUMBOX_QUEUE_PREFIX
       volumes:
-        - name: botium-box-mini-storage
+        - name: botium-box-storage
           persistentVolumeClaim:
-            claimName: botium-box-mini-storage
+            claimName: botium-box-storage
 ---
 apiVersion: v1
 kind: Service
@@ -135,7 +135,7 @@ spec:
           - /app/agent/storage
           volumeMounts:
           - mountPath: "/app/agent/storage"
-            name: botium-box-mini-storage
+            name: botium-box-storage
       containers:
         - name: box-agentp
           {{- if eq .Values.CONTAINER_REGISTRY "" }}
@@ -157,7 +157,7 @@ spec:
           {{- end }}
           volumeMounts:
           - mountPath: "/app/agent/storage/"
-            name: botium-box-mini-storage
+            name: botium-box-storage
           env:
             - name: BOTIUMBOX_AGENT_NAME
               valueFrom:
@@ -188,9 +188,9 @@ spec:
                   name: botium-box-configmap
                   key: BOTIUMBOX_QUEUE_PREFIX
       volumes:
-        - name: botium-box-mini-storage
+        - name: botium-box-storage
           persistentVolumeClaim:
-            claimName: botium-box-mini-storage
+            claimName: botium-box-storage
 ---
 apiVersion: v1
 kind: Service

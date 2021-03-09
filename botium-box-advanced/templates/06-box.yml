@@ -33,7 +33,7 @@ spec:
           - /app/server/storage
           volumeMounts:
           - mountPath: "/app/server/storage"
-            name: botium-box-mini-storage
+            name: botium-box-storage
         - name: box-server-chmod-er-config
           image: busybox:latest
           command:
@@ -43,7 +43,7 @@ spec:
           - /app/prisma-config/
           volumeMounts:
           - mountPath: "/app/prisma-config/"
-            name: botium-box-mini-prisma-config-storage
+            name: botium-box-prisma-config-storage
       containers:
         - name: box-server
           imagePullPolicy: Always
@@ -59,9 +59,9 @@ spec:
               containerPort: 4000
           volumeMounts:
           - mountPath: "/app/server/storage/"
-            name: botium-box-mini-storage
+            name: botium-box-storage
           - mountPath: "/app/prisma-config/"
-            name: botium-box-mini-prisma-config-storage
+            name: botium-box-prisma-config-storage
           env:
             - name: DEBUG
               value: botium*
@@ -237,12 +237,12 @@ spec:
                   name: botium-box-secrets
                   key: PARAPHRASING_APIKEY
       volumes:
-        - name: botium-box-mini-storage
+        - name: botium-box-storage
           persistentVolumeClaim:
-            claimName: botium-box-mini-storage
-        - name: botium-box-mini-prisma-config-storage
+            claimName: botium-box-storage
+        - name: botium-box-prisma-config-storage
           persistentVolumeClaim:
-            claimName: botium-box-mini-prisma-config-storage
+            claimName: botium-box-prisma-config-storage
 {{- if .Values.ENABLE_MULTI_TENANCY }}
 ---
 apiVersion: extensions/v1beta1
@@ -281,9 +281,9 @@ spec:
               containerPort: 4000
           volumeMounts:
           - mountPath: "/app/storage/"
-            name: botium-box-mini-storage
+            name: botium-box-storage
           - mountPath: "/app/prisma-config/"
-            name: botium-box-mini-prisma-config-storage
+            name: botium-box-prisma-config-storage
           securityContext:
             runAsUser: 0
             runAsGroup: 0
@@ -338,12 +338,12 @@ spec:
                   name: botium-box-configmap
                   key: BOTIUMBOX_QUEUE_PREFIX
       volumes:
-        - name: botium-box-mini-storage
+        - name: botium-box-storage
           persistentVolumeClaim:
-            claimName: botium-box-mini-storage
-        - name: botium-box-mini-prisma-config-storage
+            claimName: botium-box-storage
+        - name: botium-box-prisma-config-storage
           persistentVolumeClaim:
-            claimName: botium-box-mini-prisma-config-storage
+            claimName: botium-box-prisma-config-storage
 {{- end }}
 ---
 apiVersion: v1
