@@ -405,7 +405,7 @@ spec:
 {{- if .Values.INSTALL_INGRESS }}
 {{- if .Values.ENABLE_MULTI_TENANCY }}
 ---
-apiVersion: apps/v1
+apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: box-ingress
