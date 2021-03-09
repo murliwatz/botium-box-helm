@@ -29,11 +29,6 @@ questions:
   description: "Container Registry (default is dockerhub)"
   type: string
   required: false
-- variable: PRISMA_MANAGEMENT_API_SECRET
-  default: ""
-  description: "Prisma Management API Secret"
-  type: string
-  required: true
 - variable: ACTIVATE_ZAP
   default: false
   description: "Activate ZAP"
@@ -262,3 +257,20 @@ questions:
     default: "eu-central-1"
     type: string
     required: false
+- variable: PRISMA_ENDPOINT
+  default: "https://prisma03.botiumbox.com/box/..."
+  description: "Prisma Endpoint URL"
+  type: string
+  required: true
+  show_if: "ENABLE_MULTI_TENANCY=false"
+- variable: PRISMA_SECRET
+  default: "prisma123"
+  description: "Prisma Secret"
+  type: string
+  required: true
+  show_if: "ENABLE_MULTI_TENANCY=false"
+- variable: PRISMA_MANAGEMENT_API_SECRET
+  default: ""
+  description: "Prisma Management API Secret"
+  type: string
+  required: true

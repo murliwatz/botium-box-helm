@@ -299,11 +299,24 @@ spec:
               value: /app/datasets-mini
             - name: PRISMA_BIN_FILE
               value: /app/server/node_modules/.bin/prisma
+            {{- if .Values.ENABLE_MULTI_TENANCY }}
             - name: PRISMA_CONFIG_FILE
               valueFrom:
                 configMapKeyRef:
                   name: botium-box-configmap
                   key: PRISMA_CONFIG_FILE
+            {{- else }}
+            - name: PRISMA_ENDPOINT
+              valueFrom:
+                configMapKeyRef:
+                  name: botium-box-configmap
+                  key: PRISMA_ENDPOINT
+            - name: PRISMA_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: botium-box-secrets
+                  key: PRISMA_SECRET
+            {{- end }}
             - name: LICENSE_KEY
               valueFrom:
                 configMapKeyRef:

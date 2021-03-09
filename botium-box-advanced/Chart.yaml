@@ -3,13 +3,10 @@ name: botium-box-advanced
 description: Botium Box Advanced
 
 type: application
-version: 0.0.7
+version: 0.0.8
 appVersion: 2.8.6
 
 dependencies:
-  - name: botium-box-prisma
-    version: 2.0.6
-    repository: 'file://../botium-box-prisma'
   - name: botium-box-redis
     version: 0.0.1
     repository: 'file://../botium-box-redis'
