@@ -14,6 +14,11 @@ questions:
   description: "Botium Box Performance Test Agent Count"
   type: int
   required: true
+- variable: ENABLE_AGENT_NODESELECTION
+  default: false
+  description: "Deploy Agents on specific nodes only (box-agent-type: common / performance)"
+  type: boolean
+  required: true
 - variable: BOTIUM_BOX_VERSION
   default: "2.8.4"
   description: "Botium Box Version"
@@ -29,21 +34,23 @@ questions:
   description: "Prisma Management API Secret"
   type: string
   required: true
-- variable: INSTALL_ZAP
-  default: false
-  description: "Install ZAP"
-  type: boolean
-  required: true
 - variable: ACTIVATE_ZAP
   default: false
   description: "Activate ZAP"
   type: boolean
   required: true
-- variable: ZAP_SERVICE
-  default: "zap"
-  description: "ZAP Service"
-  type: string
-  required: true
+  show_subquestion_if: "true"
+  subquestions:
+  - variable: INSTALL_ZAP
+    default: false
+    description: "Install ZAP"
+    type: boolean
+    required: true
+  - variable: ZAP_SERVICE
+    default: "zap"
+    description: "ZAP Service"
+    type: string
+    required: true
 - variable: SMTP_HOST
   default: "email-smtp.eu-west-1.amazonaws.com"
   description: "SMTP Host"
@@ -103,19 +110,9 @@ questions:
   description: "JWT expiry in minutes (default: 43200 = 30 days)"
   type: int
   required: false
-- variable: AWS_ACCESS_KEY_ID
+- variable: FQDN
   default: ""
-  description: "AWS Access Key ID for Wildcard Certificate Challenge"
-  type: string
-  required: true
-- variable: AWS_SECRET_ACCESS_KEY
-  default: ""
-  description: "AWS Secret Access Key for Wildcard Certificate Challenge"
-  type: string
-  required: true
-- variable: SHORTNAME
-  default: ""
-  description: "Cluster Shortname (*.shortname.botiumbox.com, e.g. *.mini01.botiumbox.com)"
+  description: "Cluster FQDN (shortname.botiumbox.com, e.g. mini01.botiumbox.com)"
   type: string
   required: true
 - variable: BOTIUMBOX_AGENT_LIST
@@ -131,16 +128,6 @@ questions:
 - variable: BOTIUMBOX_QUEUE_PREFIX
   default: "qprod"
   description: "Redis Prefix"
-  type: string
-  required: true
-- variable: BITBUCKET_USERNAME
-  default: ""
-  description: "BitBucket Username"
-  type: string
-  required: true
-- variable: BITBUCKET_PASSWORD
-  default: ""
-  description: "BitBucket Password"
   type: string
   required: true
 - variable: INSTALL_INGRESS
@@ -163,26 +150,28 @@ questions:
   description: "Enable Limits for agents"
   type: boolean
   required: true
-- variable: RESOURCE_CPU_REQUEST
-  default: "0.1"
-  description: "Minimum required CPU"
-  type: string
-  required: true
-- variable: RESOURCE_CPU_LIMIT
-  default: "0.5"
-  description: "CPU Limit"
-  type: string
-  required: true
-- variable: RESOURCE_MEM_REQUEST
-  default: "512Mi"
-  description: "Minimum required MEM"
-  type: string
-  required: true
-- variable: RESOURCE_MEM_LIMIT
-  default: "1Gi"
-  description: "MEM Limit"
-  type: string
-  required: true
+  show_subquestion_if: "true"
+  subquestions:
+  - variable: RESOURCE_CPU_REQUEST
+    default: "0.1"
+    description: "Minimum required CPU"
+    type: string
+    required: true
+  - variable: RESOURCE_CPU_LIMIT
+    default: "0.5"
+    description: "CPU Limit"
+    type: string
+    required: true
+  - variable: RESOURCE_MEM_REQUEST
+    default: "512Mi"
+    description: "Minimum required MEM"
+    type: string
+    required: true
+  - variable: RESOURCE_MEM_LIMIT
+    default: "1Gi"
+    description: "MEM Limit"
+    type: string
+    required: true
 - variable: BOTIUMBOX_SMARTLOOK_KEY
   description: "Smartlook Key"
   type: string
@@ -207,34 +196,6 @@ questions:
   description: "Paraphrasing API Key"
   type: string
   required: false
-- variable: ENABLE_BACKUP_PRISMA_CONFIG
-  default: false
-  description: "Enable Backup for prisma config folder"
-  type: boolean
-  required: true
-- variable: BACKUP_SCHEDULE
-  type: string
-  default: "0 0 * * *"
-  description: "Default schedule is daily at 00:00"
-  required: false
-- variable: S3_ACCESS_KEY_ID
-  type: string
-  required: false
-- variable: S3_SECRET_ACCESS_KEY
-  type: string
-  required: false
-- variable: S3_BUCKET
-  default: "botium-mini-backups"
-  type: string
-  required: true
-- variable: S3_ENDPOINT
-  default: "https://s3.eu-central-1.wasabisys.com"
-  type: string
-  required: false
-- variable: S3_REGION
-  default: "eu-central-1"
-  type: string
-  required: false
 - variable: NODE_OPTIONS
   default: "--max-old-space-size=4096"
   type: string
@@ -244,3 +205,58 @@ questions:
   description: "Enable maintenance mode for Botium Box"
   type: boolean
   required: true
+- variable: ENABLE_MULTI_TENANCY
+  default: false
+  description: "Enable Multi Tenancy"
+  type: boolean
+  required: true
+  show_subquestion_if: "true"
+  subquestions:
+  - variable: AWS_ACCESS_KEY_ID
+    default: ""
+    description: "AWS Access Key ID for Wildcard Certificate Challenge"
+    type: string
+    required: true
+  - variable: AWS_SECRET_ACCESS_KEY
+    default: ""
+    description: "AWS Secret Access Key for Wildcard Certificate Challenge"
+    type: string
+    required: true
+  - variable: BITBUCKET_USERNAME
+    default: ""
+    description: "BitBucket Username for Box Shell (to fetch management scripts)"
+    type: string
+    required: true
+  - variable: BITBUCKET_PASSWORD
+    default: ""
+    description: "BitBucket Password Box Shell (to fetch management scripts)"
+    type: string
+    required: true
+  - variable: ENABLE_BACKUP_PRISMA_CONFIG
+    default: false
+    description: "Enable Backup for prisma config folder"
+    type: boolean
+    required: true
+  - variable: BACKUP_SCHEDULE
+    type: string
+    default: "0 0 * * *"
+    description: "Default schedule is daily at 00:00"
+    required: false
+  - variable: S3_ACCESS_KEY_ID
+    type: string
+    required: false
+  - variable: S3_SECRET_ACCESS_KEY
+    type: string
+    required: false
+  - variable: S3_BUCKET
+    default: "botium-mini-backups"
+    type: string
+    required: true
+  - variable: S3_ENDPOINT
+    default: "https://s3.eu-central-1.wasabisys.com"
+    type: string
+    required: false
+  - variable: S3_REGION
+    default: "eu-central-1"
+    type: string
+    required: false

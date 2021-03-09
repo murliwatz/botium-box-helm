@@ -239,6 +239,7 @@ spec:
         - name: botium-box-mini-prisma-config-storage
           persistentVolumeClaim:
             claimName: botium-box-mini-prisma-config-storage
+{{- if .Values.ENABLE_MULTI_TENANCY }}
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment
@@ -322,6 +323,7 @@ spec:
         - name: botium-box-mini-prisma-config-storage
           persistentVolumeClaim:
             claimName: botium-box-mini-prisma-config-storage
+{{- end }}
 ---
 apiVersion: v1
 kind: Service

@@ -19,8 +19,10 @@ spec:
         app: botium-box
         tier: frontend
     spec:
+      {{- if .Values.ENABLE_AGENT_NODESELECTION}}
       nodeSelector:
         box-agent-type: common
+      {{- end }}
       initContainers:
         - name: box-agent-chmod-er
           image: busybox:latest
@@ -97,6 +99,7 @@ spec:
   selector:
     name: box-agentp
     app: botium-box
+---
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
@@ -118,8 +121,10 @@ spec:
         app: botium-box
         tier: frontend
     spec:
+      {{- if .Values.ENABLE_AGENT_NODESELECTION}}
       nodeSelector:
         box-agent-type: performance
+      {{- end }}
       initContainers:
         - name: box-agentp-chmod-er
           image: busybox:latest
