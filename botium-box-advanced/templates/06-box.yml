@@ -403,7 +403,7 @@ spec:
               containerPort: 80
 {{- end }}
 {{- if .Values.INSTALL_INGRESS }}
-{{- if .Values.WILDCARD_INGRESS }}
+{{- if .Values.ENABLE_MULTI_TENANCY }}
 ---
 apiVersion: extensions/v1beta1
 kind: Ingress
