@@ -144,7 +144,11 @@ questions:
   required: true
   show_subquestion_if: "true"
   subquestions:
-
+  - variable: LETS_ENCRYPT_EMAIL
+    default: ""
+    description: "Email for Lets Encrypt"
+    type: string
+    required: true
 - variable: ENABLE_RESOURCE_LIMIT
   default: false
   description: "Enable Limits for agents"
