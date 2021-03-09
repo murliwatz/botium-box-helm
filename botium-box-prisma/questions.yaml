@@ -52,19 +52,17 @@ questions:
   description: "Install Mysql"
   type: boolean
   required: true
+  show_subquestion_if: "false"
   subquestions:
   - variable: MYSQL_HOST
     default: ""
     type: string
     required: true
-    show_subquestion_if: "false"
   - variable: MYSQL_USER
     default: ""
     type: string
     required: true
-    show_subquestion_if: "false"
   - variable: MYSQL_PASSWORD
     default: ""
     type: string
     required: true
-    show_subquestion_if: "false"
