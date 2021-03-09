@@ -62,7 +62,7 @@ spec:
           {{- if .Values.ENABLE_MULTI_TENANCY }}
           args: ["-c", "node -r dotenv-flow/config dist/botium-box-server.js"]
           {{- else }}
-          args: ["-c", "npm run prisma-deploy && node -r dotenv-flow/config dist/botium-box-server.js"]
+          args: ["-c", "CMD ./wait.sh -t $WAIT_TIMEOUT -e $PRISMA_ENDPOINT && npm run prisma-deploy && npm run prisma-seed && node -r dotenv-flow/config dist/botium-box-server.js"]
           {{- end }}
           ports:
             - name: box-4000
