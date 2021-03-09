@@ -59,5 +59,3 @@ PRISMA_MANAGEMENT_SCHEMA: ""
 
 botium-box-redis:
   REDIS_PASSWORD: ""
-
-botium-box-zap:
