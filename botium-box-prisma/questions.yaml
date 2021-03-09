@@ -8,28 +8,35 @@ questions:
   description: "DNS Name (*.botiumbox.com)"
   type: string
   required: true
-- variable: BACKUP_SCHEDULE
-  type: string
-  default: "0 0 * * *"
-  description: "Default schedule is daily at 00:00"
+- variable: ENABLE_S3_BACKUP
+  default: true
+  description: "Enable S3 Backup (mysqldump to S3)"
+  type: boolean
   required: true
-- variable: S3_ACCESS_KEY_ID
-  type: string
-  required: true
-- variable: S3_SECRET_ACCESS_KEY
-  type: string
-  required: true
-- variable: S3_BUCKET
-  type: string
-  required: true
-- variable: S3_ENDPOINT
-  default: "https://s3.eu-central-1.wasabisys.com"
-  type: string
-  required: true
-- variable: S3_REGION
-  default: "eu-central-1"
-  type: string
-  required: true
+  show_subquestion_if: "true"
+  subquestions:
+  - variable: BACKUP_SCHEDULE
+    type: string
+    default: "0 0 * * *"
+    description: "Default schedule is daily at 00:00"
+    required: true
+  - variable: S3_ACCESS_KEY_ID
+    type: string
+    required: true
+  - variable: S3_SECRET_ACCESS_KEY
+    type: string
+    required: true
+  - variable: S3_BUCKET
+    type: string
+    required: true
+  - variable: S3_ENDPOINT
+    default: "https://s3.eu-central-1.wasabisys.com"
+    type: string
+    required: true
+  - variable: S3_REGION
+    default: "eu-central-1"
+    type: string
+    required: true
 - variable: STORAGE_CLASS_BOX
   description: "Storage Class for Mysql Database"
   type: storageclass
@@ -49,7 +56,7 @@ questions:
   required: true
 - variable: INSTALL_MYSQL
   default: true
-  description: "Install Mysql"
+  description: "Install Mysql Service or use an external service (i.e. RBS)"
   type: boolean
   required: true
   show_subquestion_if: "false"
@@ -58,11 +65,11 @@ questions:
     default: ""
     type: string
     required: true
-  - variable: MYSQL_USER
-    default: ""
-    type: string
-    required: true
-  - variable: MYSQL_PASSWORD
-    default: ""
-    type: string
-    required: true
+- variable: MYSQL_USER
+  default: ""
+  type: string
+  required: true
+- variable: MYSQL_PASSWORD
+  default: ""
+  type: string
+  required: true
