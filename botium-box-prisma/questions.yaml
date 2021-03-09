@@ -62,7 +62,7 @@ questions:
   show_subquestion_if: "false"
   subquestions:
   - variable: MYSQL_HOST
-    default: ""
+    default: "mysql"
     type: string
     required: true
 - variable: MYSQL_USER
