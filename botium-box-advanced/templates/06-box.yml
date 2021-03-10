@@ -40,6 +40,7 @@ spec:
           volumeMounts:
           - mountPath: "/app/server/storage"
             name: botium-box-storage
+        {{- if .Values.ENABLE_MULTI_TENANCY }}
         - name: box-server-chmod-er-config
           image: busybox:latest
           command:
@@ -50,6 +51,7 @@ spec:
           volumeMounts:
           - mountPath: "/app/prisma-config/"
             name: botium-box-prisma-config-storage
+        {{- end }}
       containers:
         - name: box-server
           imagePullPolicy: Always
@@ -265,9 +267,11 @@ spec:
         - name: botium-box-storage
           persistentVolumeClaim:
             claimName: botium-box-storage
+        {{- if .Values.ENABLE_MULTI_TENANCY }}
         - name: botium-box-prisma-config-storage
           persistentVolumeClaim:
             claimName: botium-box-prisma-config-storage
+        {{- end }}
 {{- if .Values.ENABLE_MULTI_TENANCY }}
 ---
 apiVersion: apps/v1
