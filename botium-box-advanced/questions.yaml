@@ -50,6 +50,7 @@ questions:
   default: true
   description: "Install Redis Service or use external Redis Service"
   type: boolean
+  group: "redis"
   required: true
   show_subquestion_if: "false"
   subquestions:
@@ -58,6 +59,12 @@ questions:
     description: "Redis Service Name"
     type: string
     required: true
+- variable: REDIS_PASSWORD
+  default: "redis123"
+  description: "Redis Password"
+  type: string
+  required: true
+  group: "redis"
 - variable: SMTP_HOST
   default: "email-smtp.eu-west-1.amazonaws.com"
   description: "SMTP Host"
@@ -271,10 +278,3 @@ questions:
   description: "Prisma Management API Secret"
   type: string
   required: true
-
-botium-box-redis:
-  - variable: REDIS_PASSWORD
-    default: "redis123"
-    description: "Redis Password"
-    type: string
-    required: true
