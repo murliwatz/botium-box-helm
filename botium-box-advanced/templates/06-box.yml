@@ -70,8 +70,10 @@ spec:
           volumeMounts:
           - mountPath: "/app/server/storage/"
             name: botium-box-storage
+          {{- if .Values.ENABLE_MULTI_TENANCY }}
           - mountPath: "/app/prisma-config/"
             name: botium-box-prisma-config-storage
+          {{- end }}
           env:
             - name: DEBUG
               value: botium*
@@ -305,8 +307,10 @@ spec:
           volumeMounts:
           - mountPath: "/app/storage/"
             name: botium-box-storage
+          {{- if .Values.ENABLE_MULTI_TENANCY }}
           - mountPath: "/app/prisma-config/"
             name: botium-box-prisma-config-storage
+          {{- end }}
           securityContext:
             runAsUser: 0
             runAsGroup: 0
@@ -351,9 +355,11 @@ spec:
         - name: botium-box-storage
           persistentVolumeClaim:
             claimName: botium-box-storage
+        {{- if .Values.ENABLE_MULTI_TENANCY }}
         - name: botium-box-prisma-config-storage
           persistentVolumeClaim:
             claimName: botium-box-prisma-config-storage
+        {{- end }}
 {{- end }}
 ---
 apiVersion: v1

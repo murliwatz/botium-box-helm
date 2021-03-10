@@ -53,19 +53,9 @@ questions:
   required: true
   show_subquestion_if: "false"
   subquestions:
-  - variable: BOTIUMBOX_QUEUE_PREFIX
-    default: "qprod"
-    description: "Redis Prefix"
-    type: string
-    required: true
   - variable: REDIS_SERVICE
     default: "redis"
     description: "Redis Service Name"
-    type: string
-    required: true
-  - variable: REDIS_PASSWORD
-    default: "redis123"
-    description: "Redis Password"
     type: string
     required: true
 - variable: SMTP_HOST
@@ -281,3 +271,10 @@ questions:
   description: "Prisma Management API Secret"
   type: string
   required: true
+
+botium-box-redis:
+  - variable: REDIS_PASSWORD
+    default: "redis123"
+    description: "Redis Password"
+    type: string
+    required: true
