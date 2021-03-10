@@ -270,29 +270,36 @@ questions:
     description: "Enable Backup for prisma config folder"
     type: boolean
     required: true
+    group: "multi tenancy - backup"
   - variable: BACKUP_SCHEDULE
     type: string
     default: "0 0 * * *"
     description: "Default schedule is daily at 00:00"
     required: false
+    group: "multi tenancy - backup"
   - variable: S3_ACCESS_KEY_ID
     type: string
     required: false
+    group: "multi tenancy - backup"
   - variable: S3_SECRET_ACCESS_KEY
     type: string
     required: false
+    group: "multi tenancy - backup"
   - variable: S3_BUCKET
     default: "botium-mini-backups"
     type: string
     required: true
+    group: "multi tenancy - backup"
   - variable: S3_ENDPOINT
     default: "https://s3.eu-central-1.wasabisys.com"
     type: string
     required: false
+    group: "multi tenancy - backup"
   - variable: S3_REGION
     default: "eu-central-1"
     type: string
     required: false
+    group: "multi tenancy - backup"
 - variable: PRISMA_ENDPOINT
   default: "https://prisma03.botiumbox.com/box/..."
   description: "Prisma Endpoint URL"
