@@ -1,4 +1,4 @@
-{{- if AND .Values.ENABLE_MULTI_TENANCY .Values.ENABLE_BACKUP_PRISMA_CONFIG }}
+{{- if .Values.ENABLE_BACKUP_PRISMA_CONFIG }}
 apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
